@@ -5,3 +5,6 @@ choose the highest release:
 ```
 https://github.com/heegarthur/learnzone/releases
 ```
+
+open the .exe
+
