@@ -1,0 +1,15 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.learnzone
+productName: learnzone
+files:
+  - filter:
+      - '**/*'
+win:
+  icon: icon.ico
+mac:
+  icon: icon.icns
+linux:
+  icon: icon.png
+electronVersion: 36.3.2
