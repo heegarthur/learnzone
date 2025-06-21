@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learnzone</title>
+</head>
+<body>
+    <br><img id="icon" src="icon.png" width="75" height="75" alt=""><br>
+    <br><div id="learnzone">learnzone</div>
+    </br><button onclick="openurl('https://studygo.com')">studygo</button>
+    <button onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades AI</button>
+    <button onclick="openurl('https://pomofocus.io/')">pomodoro timer</button>
+    <button onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
+    <button onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random timer</button>
+    <button onclick="openurl('https://www.remnote.com/')">flashcards</button>
+    <button onclick="openurl('https://quizlet.com/nl')">quizlet</button>
+    <div id="times"><br>
+        <div>seconds focussed: <span id="scoreshow">0</span></div>
+        <div>days: <span id="days" class="showtimes"></span></div>
+        <div>hours: <span id="hours" class="showtimes"></span></div>
+        <div>minutes: <span id="minutes" class="showtimes"></span></div>
+        <div>seconds: <span id="seconds" class="showtimes"></span></div>
+    </div>
+
+    <style>
+        #learnzone{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(0, 70, 66);
+            font-weight: 500;
+            animation: energy infinite 10s;
+        }
+        @keyframes energy{
+            1%{
+                color: rgb(229, 255, 0);
+            }25%{
+                color: rgb(0, 195, 255);
+            }50%{
+                color: rgb(58, 248, 0);
+            }75%{
+                color: rgb(255, 0, 0);
+            }100%{
+                color: rgb(255, 187, 0);
+            }
+        }
+        #icon{
+            border-radius: 50%;
+            transition: ease-in-out 0.4s;
+            
+        }
+        #icon:hover{
+            transform: scale(1.4);
+        }
+        .showtimes{
+            color: rgb(194, 0, 0);
+            animation: glamour 1s infinite;
+            
+        }
+        @keyframes glamour{
+            1%{
+                color: rgb(69, 241, 227);
+            }
+            
+        }
+        #times{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: lighter;
+            font-size: x-large;
+        }
+        body{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            border-radius: 10%;
+            border-color: rgb(144, 216, 141);
+            border-style:ridge;
+            background-color: rgb(243, 247, 199);
+            transition: 0.1s ease-in-out;
+        }
+        button:hover{
+            border-color: rgb(243, 247, 199);
+            background-color: rgb(144, 216, 141);
+            transform: scale(1.1);
+        }
+        #scoreshow{
+            font-family:fantasy ;
+            font-style: italic;
+            animation: glimming 10s infinite;
+        }
+        @keyframes glimming{
+            1%{
+                color: rgb(102, 0, 0);
+            }
+            25%{
+                transform: scale(2);
+                color:rgb(97, 95, 0);
+            }
+            50%{
+                color: rgb(0, 66, 66);
+            }
+            75%{
+                transform: scale(0.5);
+                color: rgb(8, 0, 39);
+            }
+            100%{
+                color: rgb(77, 0, 0);
+            }
+        }
+    </style>
+
+    <script>
+        counting();
+        function counting() {
+            let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
+            const score_element = document.getElementById('scoreshow');
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            function updateTimeDisplays(score) {
+                const days = Math.floor(score / 86400);
+                const hours = Math.floor((score % 86400) / 3600);
+                const minutes = Math.floor((score % 3600) / 60);
+                const seconds = score % 60;
+
+                daysEl.textContent = days;
+                hoursEl.textContent = hours;
+                minutesEl.textContent = minutes;
+                secondsEl.textContent = seconds;
+            }
+
+            score_element.textContent = score;
+            updateTimeDisplays(score);
+
+            setInterval(() => {
+                score += 1;
+                localStorage.setItem('totaltime', score.toString());
+                score_element.textContent = score;
+                updateTimeDisplays(score);
+            }, 1000);
+        }
+
+        
+        function openurl(url){
+            window.open(url)
+        }
+    </script>
+    
+</body>
+</html>
