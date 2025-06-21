@@ -8,3 +8,6 @@ https://github.com/heegarthur/learnzone/releases
 
 open the .exe
 
+you can also choose for the website:
+
+https://heegarthur.github.io/learnzone/
