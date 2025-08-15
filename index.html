@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>learnzone</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <br><img id="icon" src="icon.png" width="75" height="75" alt=""><br>
@@ -23,94 +24,7 @@
         <div>seconds: <span id="seconds" class="showtimes"></span></div>
     </div>
 
-    <style>
-        #learnzone{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: rgb(0, 70, 66);
-            font-weight: 500;
-            animation: energy infinite 10s;
-        }
-        @keyframes energy{
-            1%{
-                color: rgb(229, 255, 0);
-            }25%{
-                color: rgb(0, 195, 255);
-            }50%{
-                color: rgb(58, 248, 0);
-            }75%{
-                color: rgb(255, 0, 0);
-            }100%{
-                color: rgb(255, 187, 0);
-            }
-        }
-        #icon{
-            border-radius: 50%;
-            transition: ease-in-out 0.4s;
-            
-        }
-        #icon:hover{
-            transform: scale(1.4);
-        }
-        .showtimes{
-            color: rgb(194, 0, 0);
-            animation: glamour 1s infinite;
-            
-        }
-        @keyframes glamour{
-            1%{
-                color: rgb(69, 241, 227);
-            }
-            
-        }
-        #times{
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-weight: lighter;
-            font-size: x-large;
-        }
-        body{
-            margin: auto;
-            width: 50%;
-            text-align: center;
-        }
-        button{
-            padding: 10px;
-            border-radius: 10px;
-            border-radius: 10%;
-            border-color: rgb(144, 216, 141);
-            border-style:ridge;
-            background-color: rgb(243, 247, 199);
-            transition: 0.1s ease-in-out;
-        }
-        button:hover{
-            border-color: rgb(243, 247, 199);
-            background-color: rgb(144, 216, 141);
-            transform: scale(1.1);
-        }
-        #scoreshow{
-            font-family:fantasy ;
-            font-style: italic;
-            animation: glimming 10s infinite;
-        }
-        @keyframes glimming{
-            1%{
-                color: rgb(102, 0, 0);
-            }
-            25%{
-                transform: scale(2);
-                color:rgb(97, 95, 0);
-            }
-            50%{
-                color: rgb(0, 66, 66);
-            }
-            75%{
-                transform: scale(0.5);
-                color: rgb(8, 0, 39);
-            }
-            100%{
-                color: rgb(77, 0, 0);
-            }
-        }
-    </style>
+    
 
     <script>
         counting();
@@ -152,4 +66,5 @@
     </script>
     
 </body>
+
 </html>
