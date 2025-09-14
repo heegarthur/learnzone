@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>learnzone</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baumans&family=Bowlby+One+SC&family=Chango&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Gabriela&family=Kalam:wght@300;400;700&family=Pompiere&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <br><img id="icon" src="icon.png" width="75" height="75" alt=""><br>
-    <br><div id="learnzone">learnzone</div>
-    </br><button onclick="openurl('https://studygo.com')">studygo</button>
-    <button onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades AI</button>
-    <button onclick="openurl('https://pomofocus.io/')">pomodoro timer</button>
-    <button onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
-    <button onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random timer</button>
-    <button onclick="openurl('https://www.remnote.com/')">flashcards</button>
-    <button onclick="openurl('https://quizlet.com/nl')">quizlet</button>
+    <br>
+    <div id="learnzone">learnzone</div></br>
+
+    <div id="level"></div>
+    <div id="progress-bar">
+        <div id="progress"></div>
+    </div>
+    <div id="xp-text"></div>
+    </div><br>
+    <br><input type="text" id="searchInput" placeholder="search..." onkeyup="search()"><br><br>
+    <button class="studygo wrts study go" onclick="openurl('https://studygo.com')">studygo</button>
+    <button class="github grades ai gradesai" onclick="openurl('https://heegarthur.github.io/gradesAI/')">grades
+        AI</button>
+    <button class="pomodoro timer pomodorotimer" onclick="openurl('https://pomofocus.io/')">pomodoro timer</button>
+    <button class="coco cocotimer timer stopwatch"
+        onclick="openurl('https://cocotimer.com/stopwatch')">stopwatch</button>
+    <button class="randomtimer random timer github quest"
+        onclick="openurl('https://heegarthur.github.io/ivoarthur/smallwebsites//random_timer/randomtime.html')">random
+        timer</button>
+    <button class="flashcard flashcards remnote" onclick="openurl('https://www.remnote.com/')">flashcards</button>
+    <button class="quizlet quiz" onclick="openurl('https://quizlet.com/nl')">quizlet</button>
+    <button class="studocu note notes" onclick="openurl('https://www.studocu.com/en-us/home')">notes</button>
+    <button class="magister schedule" onclick="openurl('https://magister.nl')">magister</button>
+    <button class="notebook note notes ai notebooklm lm"
+        onclick="openurl('https://notebooklm.google.com')">notebooklm</button>
+    <button class="clock time relaxingclock relaxing" onclick="openurl('https://www.relaxingclock.com/')">relaxing
+        clock</button>
+    <button class="classic music spotify playlist relaxing relax sound"
+        onclick="openurl('https://open.spotify.com/playlist/4MxPphYgkjR9C9PPFZ0aO1')">classic music</button>
+    <button class="mindmap mind map simplemindmap simple" onclick="openurl('https://simplemindmap.com/')">simple
+        mindmap</button>
+    <button class="study sound youtube studysound classroum"
+        onclick="openurl('https://www.youtube.com/watch?v=ptDOgiwSzB8&pp=ygUac3R1ZHkgc291bmQgZXhhbSBjbGFzc3Jvb20%3D')">classroom
+        sound</button>
+    <button class="chatgpt chat gpt ai" onclick="openurl('https://chatgpt.com/')">chat gpt</button>
     <div id="times"><br>
         <div>seconds focussed: <span id="scoreshow">0</span></div>
         <div>days: <span id="days" class="showtimes"></span></div>
@@ -24,47 +57,11 @@
         <div>seconds: <span id="seconds" class="showtimes"></span></div>
     </div>
 
-    
+    <br>
+    <div id="quote">
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
 
-    <script>
-        counting();
-        function counting() {
-            let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
-            const score_element = document.getElementById('scoreshow');
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            
-            function updateTimeDisplays(score) {
-                const days = Math.floor(score / 86400);
-                const hours = Math.floor((score % 86400) / 3600);
-                const minutes = Math.floor((score % 3600) / 60);
-                const seconds = score % 60;
-
-                daysEl.textContent = days;
-                hoursEl.textContent = hours;
-                minutesEl.textContent = minutes;
-                secondsEl.textContent = seconds;
-            }
-
-            score_element.textContent = score;
-            updateTimeDisplays(score);
-
-            setInterval(() => {
-                score += 1;
-                localStorage.setItem('totaltime', score.toString());
-                score_element.textContent = score;
-                updateTimeDisplays(score);
-            }, 1000);
-        }
-
-        
-        function openurl(url){
-            window.open(url)
-        }
-    </script>
-    
 </body>
 
 </html>
