@@ -1,87 +1,159 @@
-
-#learnzone{
+#learnzone {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(0, 70, 66);
     font-weight: 500;
-    animation: energy infinite 10s;
+    animation: energy infinite 600s;
+    font-size: xx-large;
 }
-@keyframes energy{
-    1%{
-        color: rgb(229, 255, 0);
-    }25%{
-        color: rgb(0, 195, 255);
-    }50%{
-        color: rgb(58, 248, 0);
-    }75%{
-        color: rgb(255, 0, 0);
-    }100%{
-        color: rgb(255, 187, 0);
+
+@keyframes energy {
+    1% {
+        color: #e40000;
+    }
+
+    100% {
+        color: #00f224;
     }
 }
-#icon{
+
+#icon {
     border-radius: 50%;
     transition: ease-in-out 0.4s;
-    
+
 }
-#icon:hover{
+
+#icon:hover {
     transform: scale(1.4);
 }
-.showtimes{
+
+.showtimes {
     color: rgb(194, 0, 0);
     animation: glamour 1s infinite;
-    
+
 }
-@keyframes glamour{
-    1%{
+
+@keyframes glamour {
+    1% {
         color: rgb(69, 241, 227);
     }
-    
+
 }
-#times{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+#times {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: lighter;
     font-size: x-large;
 }
-body{
+
+body {
     margin: auto;
     width: 50%;
     text-align: center;
+    align-items: center;
 }
-button{
+
+button {
     padding: 10px;
     border-radius: 10px;
     border-radius: 10%;
     border-color: rgb(144, 216, 141);
-    border-style:ridge;
+    border-style: ridge;
     background-color: rgb(243, 247, 199);
     transition: 0.1s ease-in-out;
 }
-button:hover{
+
+button:hover {
     border-color: rgb(243, 247, 199);
     background-color: rgb(144, 216, 141);
     transform: scale(1.1);
 }
-#scoreshow{
-    font-family:fantasy ;
+
+#scoreshow {
+    font-family: fantasy;
     font-style: italic;
-    animation: glimming 10s infinite;
+    animation: glimming 60s infinite;
 }
-@keyframes glimming{
-    1%{
+
+@keyframes glimming {
+    1% {
         color: rgb(102, 0, 0);
     }
-    25%{
+
+    25% {
         transform: scale(2);
-        color:rgb(97, 95, 0);
+        color: rgb(97, 95, 0);
     }
-    50%{
+
+    50% {
         color: rgb(0, 66, 66);
     }
-    75%{
+
+    75% {
         transform: scale(0.5);
         color: rgb(8, 0, 39);
     }
-    100%{
+
+    100% {
         color: rgb(77, 0, 0);
     }
+}
+
+
+#searchInput {
+    border-radius: 10px;
+    outline: 2px solid #8da6ff;
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #fff5b1;
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    font-size: 16px;
+}
+
+#searchInput:hover {
+    transform: scale(105%);
+    outline-style: dashed;
+}
+
+#searchInput:focus {
+    outline-offset: 5px;
+    background-color: #ffe11b;
+    outline: 2px solid #3561ff;
+}
+
+#quote {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-family: "Fuzzy Bubbles";
+    font-size: 20px;
+    width: 200px;
+    height: 20px;
+    color: #e40000;
+}
+
+#progress-bar {
+    text-align: center;
+    align-items: center;
+    margin: auto; 
+    width: 100%;
+    height: 20px;
+    border: 5px solid rgb(136, 238, 136);
+    border-radius: 10px;
+    background:#ffdd00 ;
+}
+
+#progress {
+    height: 100%;
+    background: rgb(136, 238, 136);
+    transition: width 1s ease;
+}
+#xp-text{
+    font-size: larger;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#level{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: larger;
 }
