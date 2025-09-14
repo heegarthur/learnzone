@@ -1,5 +1,5 @@
 # learnzone
-an electron app that helps you studying
+an electron app/website that helps you studying
 
 choose the highest release:
 ```
