@@ -1,7 +1,7 @@
 # learnzone
 an electron app/website that helps you studying
 
-choose the (latest release)[https://github.com/heegarthur/learnzone/releases]
+choose the [latest release](https://github.com/heegarthur/learnzone/releases)
 
 
 open the .exe
