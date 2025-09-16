@@ -1,4 +1,14 @@
-
+let wakeLock = null;
+async function keepAwake(){
+  try{
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('wake lock released')
+    });
+  } catch (err){
+    console.error('wake lock failed: ', err);
+  }
+}
 function counting() {
   let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
   const score_element = document.getElementById('scoreshow');
@@ -27,7 +37,7 @@ function counting() {
     localStorage.setItem('totaltime', score.toString());
     score_element.textContent = score;
     updateTimeDisplays(score);
-    levelUp(1)
+    levelUp(1, secondsEl)
   }, 1000);
 }
 
@@ -366,18 +376,19 @@ function showRandomQuote() {
   document.getElementById("quote").innerText = chosen;
 }
 
-function levelUp(xp) {
+function levelUp(xp, total_seconds) {
   let totalXP = parseInt(localStorage.getItem("xp")) || 0;
   let level = parseInt(localStorage.getItem("level")) || 1;
 
   totalXP += xp;
 
-  let xpNeeded = level * 10;
+  // Elke level-up heeft level * 15 XP nodig
+  let xpNeeded = level * 50;
 
   while (totalXP >= xpNeeded) {
     totalXP -= xpNeeded;
     level++;
-    xpNeeded = level * 10;
+    xpNeeded = level * 50; // groeit mee
   }
 
   localStorage.setItem("xp", totalXP);
@@ -387,6 +398,8 @@ function levelUp(xp) {
   updateProgressBar(totalXP, xpNeeded);
 }
 
+
+
 function updateProgressBar(currentXP, xpNeeded) {
   let percentage = (currentXP / xpNeeded) * 100;
   document.getElementById("progress").style.width = percentage + "%";
@@ -394,7 +407,6 @@ function updateProgressBar(currentXP, xpNeeded) {
   document.getElementById("xp-text").innerText = currentXP + " / " + xpNeeded + " XP";
 }
 
-levelUp(0);
 
 showRandomQuote();
 counting();
