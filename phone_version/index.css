@@ -1,8 +1,12 @@
+body{
+    background: #fff;
+}
+
 #learnzone {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(0, 70, 66);
-    font-weight: 600;
-    animation: energy infinite 600s;
+    font-weight: 900;
+    animation: energy infinite 600s ease-in-out;
     font-size: 8vw; 
 }
 
@@ -11,16 +15,7 @@
     100% { color: #00f224; }
 }
 
-#icon {
-    border-radius: 50%;
-    transition: ease-in-out 0.4s;
-    width: 30vw;  
-    height: 30vw;
-}
 
-#icon:active { 
-    transform: scale(1.2);
-}
 
 .showtimes {
     color: rgb(194, 0, 0);
@@ -29,9 +24,7 @@
     font-weight: bold;
 }
 
-@keyframes glamour {
-    1% { color: rgb(69, 241, 227); }
-}
+
 
 #times {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -134,10 +127,10 @@ button:active {
 #support, #feed-feature {
     border-radius: 24px;
     font-family: sans-serif;
-    font-size: 5.5vw;
+    font-size: 3.5vw;
     background: #ff9767;
     border-color: #e40000;
-    padding: 14px 18px;
-    margin: 14px;
-    font-weight: bold;
+    padding: 10px 10px;
+    margin: 10px;
+    font-weight: 400;
 }
