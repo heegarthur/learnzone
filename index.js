@@ -382,13 +382,12 @@ function levelUp(xp, total_seconds) {
 
   totalXP += xp;
 
-  // Elke level-up heeft level * 15 XP nodig
   let xpNeeded = level * 50;
 
   while (totalXP >= xpNeeded) {
     totalXP -= xpNeeded;
     level++;
-    xpNeeded = level * 50; // groeit mee
+    xpNeeded = level * 50; 
   }
 
   localStorage.setItem("xp", totalXP);
