@@ -8,7 +8,9 @@ open the .exe
 
 you can also choose for the website:
 
+
 [desktop website](https://heegarthur.github.io/learnzone/)
+
 [phone website](https://heegarthur.github.io/learnzone/phone_version/phone.html)
 
 
