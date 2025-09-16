@@ -1,3 +1,14 @@
+let wakeLock = null;
+async function keepAwake(){
+  try{
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('wake lock released')
+    });
+  } catch (err){
+    console.error('wake lock failed: ', err);
+  }
+}
 
 function counting() {
   let score = parseInt(localStorage.getItem('totaltime') || '0', 10);
@@ -372,13 +383,12 @@ function levelUp(xp, total_seconds) {
 
   totalXP += xp;
 
-  // Elke level-up heeft level * 15 XP nodig
   let xpNeeded = level * 50;
 
   while (totalXP >= xpNeeded) {
     totalXP -= xpNeeded;
     level++;
-    xpNeeded = level * 50; // groeit mee
+    xpNeeded = level * 50; 
   }
 
   localStorage.setItem("xp", totalXP);
