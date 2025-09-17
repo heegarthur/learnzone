@@ -134,3 +134,9 @@ button:active {
     margin: 10px;
     font-weight: 400;
 }
+#flipclock{
+    border: none;
+    width: 90%;
+    height: 400px;
+    border-radius: 10px;
+}
